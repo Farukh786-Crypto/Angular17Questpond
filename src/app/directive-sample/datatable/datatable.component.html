@@ -1,0 +1,36 @@
+<table border="1">
+  <tr>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products" [style.color]="selectedColor">
+        <!-- 
+         [class.r1]="product.price > 28"
+        [class.g1]="product.price <= 20"
+        [class.b1]="product.price >= 30"
+        no need to used ngClass now we use class -->
+        <td>{{ product.id }}</td>
+        <td>{{ product.code }}</td>
+        <td>{{ product.name }}</td>
+        <td>
+          {{ product.price }}
+          <span *ngIf="product.price > 30"> expensive </span>
+          <span *ngIf="product.price <= 20"> cheap </span>
+        </td>
+      </tr>
+    </tbody>
+  </tr>
+</table>
+
+<input
+  type="button"
+  class="btn btn-primary"
+  (click)="addNewProductButton()"
+  value="add Product"
+/>

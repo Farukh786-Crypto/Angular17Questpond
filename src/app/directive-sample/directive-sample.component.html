@@ -1,0 +1,27 @@
+<p>directive-sample works!</p>
+
+<h4>*ngIf directives</h4>
+<span>Enter a Number :</span>
+<input type="text" [(ngModel)]="num" />
+
+<div *ngIf="num % 2 == 0; then ifBlock; else elseBlock"></div>
+<ng-template #ifBlock>
+  <span>Number is Even</span>
+</ng-template>
+<ng-template #elseBlock>
+  <span>Number is Odd</span>
+</ng-template>
+
+<h4>*ngFor</h4>
+<ul>
+  <li *ngFor="let color of colours">{{ color }}</li>
+</ul>
+<select [(ngModel)]="selectedColor">
+  <option *ngFor="let color of colours" [value]="color">{{ color }}</option>
+</select>
+<span>Color is {{ selectedColor }}</span>
+
+<app-datatable
+  [products]="products"
+  [selectedColor]="selectedColor"
+></app-datatable>
