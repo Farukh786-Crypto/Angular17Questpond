@@ -1,27 +1,38 @@
-<p>directive-sample works!</p>
+<div class="container mt-4">
+  <p class="text-success">directive-sample works!</p>
 
-<h4>*ngIf directives</h4>
-<span>Enter a Number :</span>
-<input type="text" [(ngModel)]="num" />
+  <h4 class="mb-3">*ngIf Directive</h4>
+  <div class="mb-3">
+    <label class="form-label">Enter a Number :</label>
+    <input type="number" class="form-control w-25" [(ngModel)]="num" />
+  </div>
 
-<div *ngIf="num % 2 == 0; then ifBlock; else elseBlock"></div>
-<ng-template #ifBlock>
-  <span>Number is Even</span>
-</ng-template>
-<ng-template #elseBlock>
-  <span>Number is Odd</span>
-</ng-template>
+  <div *ngIf="num % 2 == 0; then ifBlock; else elseBlock"></div>
+  <ng-template #ifBlock>
+    <span class="badge bg-primary">Number is Even</span>
+  </ng-template>
+  <ng-template #elseBlock>
+    <span class="badge bg-warning text-dark">Number is Odd</span>
+  </ng-template>
 
-<h4>*ngFor</h4>
-<ul>
-  <li *ngFor="let color of colours">{{ color }}</li>
-</ul>
-<select [(ngModel)]="selectedColor">
-  <option *ngFor="let color of colours" [value]="color">{{ color }}</option>
-</select>
-<span>Color is {{ selectedColor }}</span>
+  <h4 class="mt-4">*ngFor</h4>
+  <ul class="list-group list-group-flush w-25 mb-3">
+    <li *ngFor="let color of colours" class="list-group-item">{{ color }}</li>
+  </ul>
 
-<app-datatable
-  [products]="products"
-  [selectedColor]="selectedColor"
-></app-datatable>
+  <div class="mb-3 w-25">
+    <label class="form-label">Select a Color:</label>
+    <select class="form-select" [(ngModel)]="selectedColor">
+      <option *ngFor="let color of colours" [value]="color">{{ color }}</option>
+    </select>
+    <div class="mt-2">
+      Selected Color: <strong>{{ selectedColor }}</strong>
+    </div>
+  </div>
+
+  <!-- Your datatable component -->
+  <app-datatable
+    [products]="products"
+    [selectedColor]="selectedColor"
+  ></app-datatable>
+</div>

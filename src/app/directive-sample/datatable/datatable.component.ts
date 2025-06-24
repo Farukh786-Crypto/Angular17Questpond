@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../models/product';
+import { FavsDirective } from '../../custom/favs.directive';
 
 @Component({
   selector: 'app-datatable',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FavsDirective],
   templateUrl: './datatable.component.html',
   styleUrl: './datatable.component.css',
 })

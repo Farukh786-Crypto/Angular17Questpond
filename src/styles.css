@@ -10,3 +10,8 @@
 .b1 {
   background-color: blue;
 }
+
+.highlight {
+  background-color: gold;
+  border-radius: 10px;
+}

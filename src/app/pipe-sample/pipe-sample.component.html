@@ -1,0 +1,10 @@
+<p>pipe-sample works!</p>
+
+<p>Product Id:{{ product.id | mypipe : "E" : "-" }}</p>
+<p>Product Code {{ product.code }}</p>
+<p>Product Name {{ product.name | uppercase }}</p>
+<p>Product Price {{ product.price | currency : "INR" }}</p>
+
+<p>{{ date | date : "dd-MM-yyyy" }}</p>
+
+{{ product | json }}
