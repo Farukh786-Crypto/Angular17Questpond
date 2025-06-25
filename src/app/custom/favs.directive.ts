@@ -15,7 +15,6 @@ export class FavsDirective {
 
   @HostListener('click')
   onClick() {
-    debugger;
     this.update();
   }
 

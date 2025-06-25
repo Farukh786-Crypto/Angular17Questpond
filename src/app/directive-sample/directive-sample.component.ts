@@ -18,6 +18,8 @@ export class DirectiveSampleComponent {
   selectedColor: string = 'Red'; // Default selected color
   products: Product[] = [];
   id!: string;
+  city!: string;
+  country!: string;
 
   constructor(private activatedRoute: ActivatedRoute) {
     // Initialize the component
@@ -39,6 +41,13 @@ export class DirectiveSampleComponent {
     this.activatedRoute.params.subscribe((params) => {
       console.log('Route parameter id:', params['id']);
       this.id = params['id'];
+    });
+
+    this.activatedRoute.queryParamMap.subscribe((params) => {
+      console.log('Query parameter city:', params.get('city'));
+      console.log('Query parameter country:', params.get('country'));
+      this.city = params.get('city') || '';
+      this.country = params.get('country') || '';
     });
   }
 }

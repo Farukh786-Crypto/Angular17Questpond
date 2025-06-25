@@ -1,10 +1,44 @@
-<p>pipe-sample works!</p>
+<div class="container">
+  <p>pipe-sample works!</p>
 
-<p>Product Id:{{ product.id | mypipe : "E" : "-" }}</p>
-<p>Product Code {{ product.code }}</p>
-<p>Product Name {{ product.name | uppercase }}</p>
-<p>Product Price {{ product.price | currency : "INR" }}</p>
+  <p>Product Id:{{ product.id | mypipe : "E" : "-" }}</p>
+  <p>Product Code {{ product.code }}</p>
+  <p>Product Name {{ product.name | uppercase }}</p>
+  <p>Product Price {{ product.price | currency : "INR" }}</p>
 
-<p>{{ date | date : "dd-MM-yyyy" }}</p>
+  <p>{{ date | date : "dd-MM-yyyy" }}</p>
 
-{{ product | json }}
+  {{ product | json }}
+
+  <input
+    type="button"
+    class="btn btn-dark"
+    value="Redirect to Directive Page"
+    (click)="onRedirect()"
+  />
+</div>
+<div class="col-lg-6">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/pipesample/personal"
+        routerLinkActive="active"
+        >Personal</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        routerLink="/pipesample/education"
+        routerLinkActive="active"
+        >Educational</a
+      >
+    </li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
