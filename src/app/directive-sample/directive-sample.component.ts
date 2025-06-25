@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Product } from '../models/product';
 import { DatatableComponent } from './datatable/datatable.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-directive-sample',
@@ -16,8 +17,9 @@ export class DirectiveSampleComponent {
   colours!: string[];
   selectedColor: string = 'Red'; // Default selected color
   products: Product[] = [];
+  id!: string;
 
-  constructor() {
+  constructor(private activatedRoute: ActivatedRoute) {
     // Initialize the component
     this.num = 0;
     this.colours = ['Red', 'Green', 'Blue', 'Yellow', 'Orange', 'Purple'];
@@ -33,5 +35,10 @@ export class DirectiveSampleComponent {
     this.products.push(product1);
     this.products.push(product2);
     this.products.push(product3);
+
+    this.activatedRoute.params.subscribe((params) => {
+      console.log('Route parameter id:', params['id']);
+      this.id = params['id'];
+    });
   }
 }

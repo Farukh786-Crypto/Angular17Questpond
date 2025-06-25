@@ -5,7 +5,7 @@ import { DirectiveSampleComponent } from './directive-sample/directive-sample.co
 export const routes: Routes = [
   { path: '', redirectTo: '/databinding', pathMatch: 'full' },
   { path: 'databinding', component: DatabindingComponent },
-  { path: 'directivesample', component: DirectiveSampleComponent },
+  { path: 'dir/:id', component: DirectiveSampleComponent },
   {
     path: 'pipesample',
     loadComponent: () =>
