@@ -21,16 +21,24 @@ export class ProductTemplateDrivenFormComponent {
     );
   }
 
+  // Used to check for specific validation errors like 'required', 'pattern', etc.
+  hasError(frm: NgForm, controlName: string, errorType: string): boolean {
+    return (
+      frm.controls[controlName]?.errors?.[errorType] &&
+      (frm.controls[controlName]?.touched || frm.controls[controlName]?.dirty)
+    );
+  }
+
   onSubmit(form: NgForm) {
     // Mark all controls as touched
     Object.keys(form.controls).forEach((controlName) => {
       form.controls[controlName].markAsTouched();
     });
-    console.log('Form Submitted!', form);
+
     if (form.valid) {
-      // If the form is valid, you can proceed with submission logic
+      console.log('Form Submitted!', form);
       console.log('Product:', this.product);
+      form.resetForm(); // Reset the form after submission
     }
-    // Here you can handle the form submission, e.g., send it to a server
   }
 }

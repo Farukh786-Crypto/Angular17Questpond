@@ -50,10 +50,10 @@
             pattern="^[a-zA-Z0-9 ]+$"
           />
           <div *ngIf="onFormControl(frm, 'productName')" class="text-danger">
-            <span *ngIf="frm.controls['productName']?.errors?.required">
+            <span *ngIf="hasError(frm, 'productName', 'required')">
               Product Name is required.
             </span>
-            <span *ngIf="frm.controls['productName']?.errors?.pattern">
+            <span *ngIf="hasError(frm, 'productName', 'pattern')">
               Only alphanumeric characters and spaces are allowed.
             </span>
           </div>

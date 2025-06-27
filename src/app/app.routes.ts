@@ -6,6 +6,7 @@ import { PersonalComponent } from './pipe-sample/personal/personal.component';
 import { EducationComponent } from './pipe-sample/education/education.component';
 import { CustomerAddComponent } from './customer/customer-add/customer-add.component';
 import { ProductTemplateDrivenFormComponent } from './product/product-template-driven-form/product-template-driven-form.component';
+import { ModeldrivenFormComponent } from './product/modeldriven-form/modeldriven-form.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/databinding', pathMatch: 'full' },
@@ -21,5 +22,6 @@ export const routes: Routes = [
   },
   { path: 'datasharing', component: CustomerAddComponent },
   { path: 'templateForm', component: ProductTemplateDrivenFormComponent },
+  { path: 'modelForm', component: ModeldrivenFormComponent },
   { path: '**', redirectTo: '/databinding' }, // Wildcard route for a 404 page
 ];
