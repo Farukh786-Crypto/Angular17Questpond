@@ -1,8 +1,8 @@
 export class Product {
-  id: number;
-  code: string;
-  name: string;
-  price: number;
+  id!: number;
+  code!: string;
+  name!: string;
+  price!: number;
 
   constructor(id?: number, code?: string, name?: string, price?: number) {
     this.id = id ?? 0;
