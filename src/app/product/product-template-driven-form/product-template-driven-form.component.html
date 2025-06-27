@@ -22,14 +22,7 @@
             [(ngModel)]="product.id"
             required
           />
-          <div
-            *ngIf="
-              frm.controls['productId']?.invalid &&
-              (frm.controls['productId']?.touched ||
-                frm.controls['productId']?.dirty)
-            "
-            class="text-danger"
-          >
+          <div *ngIf="onFormControl(frm, 'productId')" class="text-danger">
             Product Id is required.
           </div>
         </div>
@@ -42,14 +35,7 @@
             [(ngModel)]="product.code"
             required
           />
-          <div
-            *ngIf="
-              frm.controls['productCode']?.invalid &&
-              (frm.controls['productCode']?.touched ||
-                frm.controls['productCode']?.dirty)
-            "
-            class="text-danger"
-          >
+          <div *ngIf="onFormControl(frm, 'productCode')" class="text-danger">
             Product Code is required.
           </div>
         </div>
@@ -63,14 +49,7 @@
             required
             pattern="^[a-zA-Z0-9 ]+$"
           />
-          <div
-            *ngIf="
-              frm.controls['productName']?.invalid &&
-              (frm.controls['productName']?.touched ||
-                frm.controls['productName']?.dirty)
-            "
-            class="text-danger"
-          >
+          <div *ngIf="onFormControl(frm, 'productName')" class="text-danger">
             <span *ngIf="frm.controls['productName']?.errors?.required">
               Product Name is required.
             </span>
@@ -88,14 +67,7 @@
             [(ngModel)]="product.price"
             required
           />
-          <div
-            *ngIf="
-              frm.controls['productPrice']?.invalid &&
-              (frm.controls['productPrice']?.touched ||
-                frm.controls['productPrice']?.dirty)
-            "
-            class="text-danger"
-          >
+          <div *ngIf="onFormControl(frm, 'productPrice')" class="text-danger">
             Product Price is required.
           </div>
         </div>
