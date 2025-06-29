@@ -259,6 +259,9 @@ Steps to implemet Model Driven approach
 		<span class="text-danger">Product Code is mandatory</span>
 	</div>
 	
+-- Follow thif url
+-- https://medium.com/netanelbasal/three-ways-to-dynamically-alter-your-form-validation-in-angular-e5fd15f1e946
+
 ---Day 7---
 
 ReactiveX

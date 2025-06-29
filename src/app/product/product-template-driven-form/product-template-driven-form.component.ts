@@ -30,6 +30,7 @@ export class ProductTemplateDrivenFormComponent {
   }
 
   onSubmit(form: NgForm) {
+    console.log(form, 'Form Submitted!');
     // Mark all controls as touched
     Object.keys(form.controls).forEach((controlName) => {
       form.controls[controlName].markAsTouched();
